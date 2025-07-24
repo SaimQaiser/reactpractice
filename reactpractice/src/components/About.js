@@ -1,47 +1,37 @@
 import React, { useState } from 'react';
 
-export default function About() {
-  const [myStyle, setMyStyle] = useState({
-    color: 'white',
-    backgroundColor: 'black',
-  });
+export default function About(props) {
+  const [text, setText] = useState("");
 
-  const [btntxt, setBtnTxt] = useState(true); // true = light mode, false = dark
+  const handleOnChange = (e) => {
+    setText(e.target.value);
+  };
 
-  const toggleStyle = () => {
-    if (myStyle.color === 'white') {
-      setMyStyle({
-        color: 'black',
-        backgroundColor: 'white',
-      });
-      setBtnTxt(false);
-    } else {
-      setMyStyle({
-        color: 'white',
-        backgroundColor: 'black',
-      });
-      setBtnTxt(true);
-    }
+  const myStyle = {
+    color: props.mode === 'dark' ? 'white' : 'black',
+    backgroundColor: props.mode === 'dark' ? 'grey' : 'white',
   };
 
   return (
     <div className="container my-3" style={myStyle}>
       <h1>About Us</h1>
 
+      {/* Dark mode switch using App-level state */}
       <div className="form-check form-switch mb-3">
         <input
           className="form-check-input"
           type="checkbox"
           id="themeSwitch"
-          onChange={toggleStyle}
-          checked={btntxt}
+          onChange={props.toggleMode}
+          checked={props.mode === 'dark'}
         />
         <label className="form-check-label" htmlFor="themeSwitch">
-          {btntxt ? 'Dark Mode On' : 'Dark Mode Off'}
+          {props.mode === 'dark' ? 'Dark Mode On' : 'Dark Mode Off'}
         </label>
       </div>
 
       <div className="accordion" id="accordionExample">
+        {/* FIRST ACCORDION */}
         <div className="accordion-item" style={myStyle}>
           <h2 className="accordion-header">
             <button
@@ -53,7 +43,7 @@ export default function About() {
               aria-expanded="true"
               aria-controls="collapseOne"
             >
-              Accordion Item #1
+              Analyze Your Text
             </button>
           </h2>
           <div
@@ -62,11 +52,18 @@ export default function About() {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body" style={myStyle}>
-              <strong>This is the first item’s accordion body.</strong> It is shown by default...
+              <textarea
+                className="form-control"
+                value={text}
+                onChange={handleOnChange}
+                id="mybox"
+                rows="5"
+              />
             </div>
           </div>
         </div>
 
+        {/* SECOND ACCORDION */}
         <div className="accordion-item" style={myStyle}>
           <h2 className="accordion-header">
             <button
@@ -78,7 +75,7 @@ export default function About() {
               aria-expanded="false"
               aria-controls="collapseTwo"
             >
-              Accordion Item #2
+              Uppercase Preview
             </button>
           </h2>
           <div
@@ -87,11 +84,18 @@ export default function About() {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body" style={myStyle}>
-              <strong>This is the second item’s accordion body.</strong> It is hidden by default...
+              <textarea
+                className="form-control"
+                value={text.toUpperCase()}
+                readOnly
+                id="mybox2"
+                rows="5"
+              />
             </div>
           </div>
         </div>
 
+        {/* THIRD ACCORDION */}
         <div className="accordion-item" style={myStyle}>
           <h2 className="accordion-header">
             <button
@@ -103,7 +107,7 @@ export default function About() {
               aria-expanded="false"
               aria-controls="collapseThree"
             >
-              Accordion Item #3
+              Reverse Preview
             </button>
           </h2>
           <div
@@ -112,7 +116,15 @@ export default function About() {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body" style={myStyle}>
-              <strong>This is the third item’s accordion body.</strong> It is hidden by default...
+              <strong>
+                <textarea
+                  className="form-control"
+                  value={text.split("").reverse().join("")}
+                  readOnly
+                  id="mybox3"
+                  rows="5"
+                />
+              </strong>
             </div>
           </div>
         </div>
