@@ -1,0 +1,269 @@
+import React, { Component } from 'react';
+import Newsitem from './Newsitem';
+
+export class News extends Component {
+  articles = [
+    {
+      "source": {
+        "id": "axios",
+        "name": "Axios"
+      },
+      "author": "Tal Axelrod",
+      "title": "MAGA clamors for arrests as Trump accuses Obama of \"treason\" - Axios",
+      "description": "Trump's most prominent supporters say he must deliver on his promise of \"transparency\" and retribution.",
+      "url": "https://www.axios.com/2025/07/23/trump-obama-epstein-investigation-maga",
+      "urlToImage": "https://images.axios.com/mlCn9dPmXZtGBbPJY7MRJnxHaDg=/0x332:4210x2700/1366x768/2025/07/22/1753221521320.jpeg",
+      "publishedAt": "2025-07-23T09:07:42Z",
+      "content": "<ul><li>He raised the stakes Tuesday, declaring in the Oval Office that former President Obama and other ex-officials must be prosecuted: \"Whether it's right or wrong, it's time to go after people,\" … [+4681 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "BBC News"
+      },
+      "author": null,
+      "title": "Protests in Ukraine as Zelensky signs bill targeting anti-corruption bodies - BBC",
+      "description": "New law sparks concern among Western allies as critics say move undermines the authority of the watchdogs.",
+      "url": "https://www.bbc.com/news/articles/c9w19pl84r8o",
+      "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/a0d9/live/ca4077a0-67a6-11f0-af20-030418be2ca5.jpg",
+      "publishedAt": "2025-07-23T06:47:39Z",
+      "content": "Vitaly ShevchenkoRussia editor, BBC Monitoring\r\nPresident Volodymyr Zelensky has signed a bill that critics say weakens the independence of Ukraine's anti-corruption bodies, sparking protests in seve… [+3594 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "CNBC"
+      },
+      "author": "Alex Harring",
+      "title": "S&P 500 futures inch higher after index posts fresh closing record, Trump announces Japan trade deal: Live updates - CNBC",
+      "description": "The broad market index posted a slim gain on Tuesday, notching its 11th record close in 2025.",
+      "url": "https://www.cnbc.com/2025/07/22/stock-market-today-live-updates.html",
+      "urlToImage": "https://image.cnbcfm.com/api/v1/image/108174000-1752855917970-gettyimages-2224945253-AFP_677M7TU.jpeg?v=1752855970&w=1920&h=1080",
+      "publishedAt": "2025-07-23T05:58:00Z",
+      "content": "Stock futures rose Wednesday after President Donald Trump announced the U.S. had reached a trade deal with Japan, lifting hope for further agreements being made. \r\nFutures linked to the Dow Jones Ind… [+1707 chars]"
+    },
+    {
+      "source": {
+        "id": "cnn",
+        "name": "CNN"
+      },
+      "author": "Kathleen Magramo, Abeer Salman, Mohammed Tawfeeq",
+      "title": "‘We are watching our colleagues waste away’: Aid workers, doctors, journalists risk starvation alongside people in Gaza - CNN",
+      "description": "Dozens of international humanitarian organizations warned Israel’s blockade of aid into Gaza is endangering the lives of doctors and aid workers, while a major news agency says it is trying to evacuate its remaining freelance journalists because the situation…",
+      "url": "https://www.cnn.com/2025/07/23/middleeast/israel-gaza-aid-blockade-starvation-risk-intl-hnk",
+      "urlToImage": "https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2225533612.jpg?c=16x9&q=w_800,c_fill",
+      "publishedAt": "2025-07-23T04:37:00Z",
+      "content": "Dozens of international humanitarian organizations warned Israels blockade of aid into Gaza is endangering the lives of doctors and aid workers, while a major news agency says it is trying to evacuat… [+8432 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Variety"
+      },
+      "author": "Jack Dunn",
+      "title": "'Freakier Friday' First Reactions Call Disney Sequel a 'True Delight' - Variety",
+      "description": "'Freakier Friday' first reactions are calling it a 'great feel-good film' that is 'hilarious' as it is 'touching.'",
+      "url": "https://variety.com/2025/film/news/freakier-friday-reactions-lindsay-lohan-jamie-lee-curtis-1236466361/",
+      "urlToImage": "https://variety.com/wp-content/uploads/2024/12/MCDFRFR_WD001.jpg?w=1000&h=563&crop=1",
+      "publishedAt": "2025-07-23T04:30:00Z",
+      "content": "“Freakier Friday” has been unveiled to members of the film press, and first reactions are calling it a “great feel-good film” that is “hilarious” as it is “touching.” \r\nTV host Jeff Conway took to X … [+2493 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Financial Times"
+      },
+      "author": "Brooke Masters",
+      "title": "Coca-Cola gets roped into making America healthy again - Financial Times",
+      "description": "Trump’s pressure on food and drink manufacturing raises questions of fairness and predictability",
+      "url": "https://www.ft.com/content/342e1e4e-275b-40bb-820d-b05748ace26f",
+      "urlToImage": "https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fd1e00ek4ebabms.cloudfront.net%2Fproduction%2Fd6119cd4-e2cb-4e98-a0ef-1426dabc08fb.jpg?source=next-barrier-page",
+      "publishedAt": "2025-07-23T04:00:10Z",
+      "content": "Complete digital access to quality analysis and expert insights, complemented with our award-winning Weekend Print edition.\r\n<ul><li></li>Everything in Print<li></li>Weekday Print Edition<li></li>FT … [+202 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "NBCSports.com"
+      },
+      "author": "Mike Florio",
+      "title": "If Micah Parsons leave camp, things could get very interesting for Parsons and the Cowboys - NBC Sports",
+      "description": "If Parsons stays away more than five days, the Cowboys can shut him down for the full season — and not pay him.",
+      "url": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/if-micah-parsons-leave-camp-things-could-get-very-interesting-for-parsons-and-the-cowboys",
+      "urlToImage": "https://nbcsports.brightspotcdn.com/dims4/default/a2c3a7a/2147483647/strip/true/crop/8001x4501+0+417/resize/1440x810!/quality/90/?url=https%3A%2F%2Fnbc-sports-production-nbc-sports.s3.us-east-1.amazonaws.com%2Fbrightspot%2F60%2F08%2Ffacadf9a44a0b91a99784c4d2db6%2Fhttps-api-imagn.com%2Frest%2Fdownload%2FimageID%3D26686794",
+      "publishedAt": "2025-07-23T03:28:33Z",
+      "content": "A player has much more leverage if he doesnt show up for training camp than if he shows up and leaves.\r\nWith Cowboys linebacker Micah Parsons being asked specifically about the possibility of leaving… [+1323 chars]"
+    },
+    {
+      "source": {
+        "id": "the-washington-post",
+        "name": "The Washington Post"
+      },
+      "author": "Jeremy Roebuck",
+      "title": "Judges’ move to oust Trump U.S. attorney pick Habba triggers a showdown - The Washington Post",
+      "description": "New Jersey’s federal judges declined to appoint Alina Habba to continue in her role as acting U.S. attorney. The Justice Department fired the prosecutor the courts chose to replace her.",
+      "url": "https://www.washingtonpost.com/national-security/2025/07/22/trump-lawyer-alina-habba-nj-us-attorney/",
+      "urlToImage": "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/3WCO2FEC2DNLORXGLKHXBOYYDU.JPG&w=1440",
+      "publishedAt": "2025-07-23T03:16:21Z",
+      "content": "Federal judges inNew Jersey declined Tuesday to appoint Alina Habba, President Donald Trumps pick for U.S. attorney in the state, to continue serving in that role, delivering a resounding rebuke to o… [+8237 chars]"
+    },
+    {
+      "source": {
+        "id": "associated-press",
+        "name": "Associated Press"
+      },
+      "author": null,
+      "title": "Officials search for bear that attacked a woman hiking on a popular Alaska trail - AP News",
+      "description": "Alaska police say a brown bear attacked a woman as she hiked on a popular trail in Alaska’s Chugach Mountains. An Anchorage Police spokesperson says the woman called 911 Tuesday afternoon. Alaska State Troopers used a helicopter to get her to a hospital. Her …",
+      "url": "https://apnews.com/article/alaska-brown-bear-attack-d6c80994ff9ac3434b63e74392e96eb3",
+      "urlToImage": "https://dims.apnews.com/dims4/default/f95a7a8/2147483647/strip/true/crop/5616x3159+0+293/resize/1440x810!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2F37%2F96%2F1fc0ca7383424b4c189133b86852%2F96ae09a3d9554b5e8cfd8a1474ca0f55",
+      "publishedAt": "2025-07-23T03:12:00Z",
+      "content": "ANCHORAGE, Alaska (AP) A brown bear attacked a woman Tuesday afternoon as she hiked on a popular trail in Alaskas Chugach Mountains, and officials are still looking for the animal, state police said.… [+1144 chars]"
+    },
+    {
+      "source": {
+        "id": "bleacher-report",
+        "name": "Bleacher Report"
+      },
+      "author": "Paul Kasabian",
+      "title": "Terry McLaurin Reportedly Doesn't Report to Commanders Camp Amid Contract Rumors - Bleacher Report",
+      "description": "Washington Commanders veterans reported to training camp Tuesday, but wide receiver Terry McLaurin, who is seeking a new contract, was not among them, per ESPN's Adam Schefter.",
+      "url": "https://bleacherreport.com/articles/25228517-terry-mclaurin-reportedly-doesnt-report-commanders-camp-amid-contract-rumors",
+      "urlToImage": "https://gsp-image-cdn.wmsports.io/cms/prod/bleacher-report/ap_images/b1324ad99f6f4de6b424ed64316535c7/Commanders_McLaurin_Football_35410.jpg?w=3800&h=2000",
+      "publishedAt": "2025-07-23T02:47:57Z",
+      "content": "Washington Commanders veterans reported to training camp Tuesday, but wide receiver Terry McLaurin, who is seeking a new contract, was not among them, per ESPN's Adam Schefter.\r\nThe 29-year-old McLau… [+2001 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Hollywood Reporter"
+      },
+      "author": "McKinley Franklin",
+      "title": "Alice Cooper, Elton John, Judas Priest Pay Tribute to Ozzy Osbourne: “The Whole World Is Mourning Ozzy Tonight” - The Hollywood Reporter",
+      "description": "\"He was and will continue to be a rock n roll legend,\" Cooper said in a statement, hours after Osbourne died on Tuesday.",
+      "url": "http://www.hollywoodreporter.com/news/music-news/ozzy-osbourne-death-reactions-tributes-1236325912/",
+      "urlToImage": "https://www.hollywoodreporter.com/wp-content/uploads/2016/05/gettyimages-512374536.jpg?w=1440&h=810&crop=1",
+      "publishedAt": "2025-07-23T02:45:42Z",
+      "content": "Some of the biggest names in the music and entertainment industry are paying tribute to Ozzy Osbourne after his family confirmed the news of his death earlier Tuesday. \r\nOsbourne died at 76 following… [+6120 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "ScienceAlert"
+      },
+      "author": "AFP",
+      "title": "Outbreak of Chikungunya Virus Poses Global Risk, Warns WHO - ScienceAlert",
+      "description": "The World Health Organization warned on Tuesday a major chikungunya virus epidemic risks sweeping around the globe, calling for urgent action to prevent it.",
+      "url": "https://www.sciencealert.com/outbreak-of-chikungunya-virus-poses-global-risk-warns-who",
+      "urlToImage": "https://www.sciencealert.com/images/2025/07/Chikungunya_virus_header.jpg",
+      "publishedAt": "2025-07-23T01:55:23Z",
+      "content": "The World Health Organization warned on Tuesday a major chikungunya virusepidemic risks sweeping around the globe, calling for urgent action to prevent it.\r\nThe WHO said it was picking up exactly the… [+2974 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "MacRumors"
+      },
+      "author": "Joe Rossignol",
+      "title": "Foldable iPhone's Display Sizes Leaked - MacRumors",
+      "description": "Apple's first foldable iPhone will be equipped with a 7.8-inch inner display, and a 5.5-inch outer display, according to Taiwanese research firm...",
+      "url": "https://www.macrumors.com/2025/07/22/foldable-iphone-display-sizes-rumor/",
+      "urlToImage": "https://images.macrumors.com/t/a63wTdKOm6Q4Sycz8dpdmeLDYSo=/2250x/article-new/2025/03/Foldable-iPhone-2023-Feature-Iridescent-1.jpg",
+      "publishedAt": "2025-07-23T01:00:00Z",
+      "content": "Apple's first foldable iPhone will be equipped with a 7.8-inch inner display, and a 5.5-inch outer display, according to Taiwanese research firm TrendForce.\r\nApple supply chain analyst Ming-Chi Kuo a… [+797 chars]"
+    },
+    {
+      "source": {
+        "id": "abc-news",
+        "name": "ABC News"
+      },
+      "author": "JILL LAWLESS Associated Press",
+      "title": "Science and local sleuthing identify a 250-year-old shipwreck on a Scottish island - ABC News",
+      "description": "Archaeologists have identified a 250-year-old shipwreck uncovered on a remote Scottish beach",
+      "url": "https://abcnews.go.com/Technology/wireStory/science-local-sleuthing-identify-250-year-shipwreck-scottish-123980196",
+      "urlToImage": "https://i.abcnewsfe.com/a/7407edbc-629b-44e8-a393-99275bfa4a1f/wirestory_02b764e9d99266a9948bd317d8059f10_16x9.jpg?w=1600",
+      "publishedAt": "2025-07-22T23:57:41Z",
+      "content": "LONDON -- When a schoolboy going for a run found the ribs of a wooden ship poking through the dunes of a remote Scottish beach, it sparked a hunt by archaeologists, scientists and local historians to… [+4255 chars]"
+    },
+    {
+      "source": {
+        "id": "politico",
+        "name": "Politico"
+      },
+      "author": "Meredith Lee Hill",
+      "title": "Epstein crisis forces Republicans to shut down House early - Politico",
+      "description": "House Republican leaders are \"stalling\" on Epstein, GOP Rep. Ralph Norman said.",
+      "url": "https://www.politico.com/live-updates/2025/07/22/congress/house-gop-huddles-on-epstein-drama-00466738",
+      "urlToImage": "https://www.politico.com/dims4/default/b6fcabc/2147483647/resize/1200x/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2F38%2Fb9%2F25ad9e744c63ae0772bb2eb65786%2Fu-s-congress-52380.jpg",
+      "publishedAt": "2025-07-22T23:48:30Z",
+      "content": null
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Live Science"
+      },
+      "author": "Patrick Pester",
+      "title": "Bite marks reveal giant terror birds were potentially prey for another apex predator — humongous caiman - Live Science",
+      "description": "Researchers have found evidence of a titanic tussle between a terror bird and a large caiman in Colombia's ancient La Venta wetlands.",
+      "url": "https://www.livescience.com/animals/extinct-species/bite-marks-reveal-giant-terror-birds-were-potentially-prey-for-another-apex-predator-humongous-caiman",
+      "urlToImage": "https://cdn.mos.cms.futurecdn.net/8VgzmziyjjCTE3YZJSimDR.png",
+      "publishedAt": "2025-07-22T23:01:00Z",
+      "content": "Fossilized bite marks suggest there could have been a dramatic tussle between a gigantic terror bird and an even more massive crocodile around 12 million years ago.\r\nPhorusrhacids, commonly known as … [+3101 chars]"
+    },
+    {
+      "source": {
+        "id": "abc-news",
+        "name": "ABC News"
+      },
+      "author": "ABC News",
+      "title": "July 22 will be the second-shortest day of the year, scientists say - ABC News",
+      "description": null,
+      "url": "https://abcnews.go.com/Technology/july-22-shortest-day-year-scientists/story?id\\\\u003d123956655",
+      "urlToImage": null,
+      "publishedAt": "2025-07-22T22:02:43Z",
+      "content": null
+    }
+  ]
+  constructor(){
+    super();
+    this.state ={
+        articles: this.articles,
+        loading: false
+    }
+  }
+
+  async componentDidMount(){
+    let url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=10521f3e1b494ec89bbaa100dac2c0ee"
+    let data = await fetch(url);
+    let parsedData = await data.json()
+
+    this.setState({articles: parsedData.articles})
+  }
+
+  render() {
+  return (
+    <div className='container my-3'>
+      <h2>PulseWire - Top Headlines</h2>
+
+      <div className='row'>
+        {this.articles.map((element) => {
+          return (
+            <div className='col-md-4' key={element.url}>
+              <Newsitem
+                title={element.title ? element.title.slice(0, 45) : ""}
+                description={element.description ? element.description.slice(0, 88) : ""}
+                imageUrl={element.urlToImage}
+                newsUrl ={element.url}
+              />
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+}
+
+export default News;
